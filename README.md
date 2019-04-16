@@ -1,4 +1,4 @@
-# quick-cal
+# quick-calc
 CLI for quick decimal, hexadecimal, binary, and octal basic calcs.
 
 ```
@@ -7,6 +7,11 @@ $ cargo install quick-calc
 
 ## Examples
 ### Add
+```
+$ qcal add 0xFF 30 o24 b111
+> dec: 312        hex: 138        oct: 470        bin: 100111000
+```
+
 ```
 $ qcal add 30 2 5
 > dec: 37         hex: 25         oct: 45         bin: 100101
@@ -17,16 +22,17 @@ $ qcal add 21 14
 > dec: 35         hex: 23         oct: 43         bin: 100011
 ```
 
+### Subtract
 ```
-$ qcal add 30 0xFF o24 b111
-> dec: 312        hex: 138        oct: 470        bin: 100111000
+$ qcal sub 0xFF 30 o24 b111
+> dec: 198        hex: c6         oct: 306        bin: 11000110
 ```
 
-### Subtract
 ```
 $ qcal sub 30 2 5
 > dec: 23         hex: 17         oct: 27         bin: 10111
 ```
+
 ```
 $ qcal sub 21 14
 > dec: 7          hex: 7          oct: 7          bin: 111
@@ -34,9 +40,15 @@ $ qcal sub 21 14
 
 ### Multiply
 ```
+$ qcal mul 0xFF 30 o24 b111
+> dec: 1071000    hex: 105798     oct: 4053630    bin: 100000101011110011000
+```
+
+```
 $ qcal mul 30 2 5
 > dec: 300       hex: 12c         oct: 454        bin: 100101100
 ```
+
 ```
 $ qcal mul 21 14
 > dec: 294        hex: 126        oct: 446         bin: 100100110
@@ -44,9 +56,15 @@ $ qcal mul 21 14
 
 ### Divide
 ```
+$ qcal div 0xFF 30 o24 b111
+> dec: 0          hex: 0          oct: 0          bin: 0
+```
+
+```
 $ qcal div 30 2 5
 > dec: 3          hex: 3          oct: 3          bin: 11
 ```
+
 ```
 $ qcal mul 21 14
 > dec: 1          hex: 1          oct: 1          bin: 1

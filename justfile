@@ -9,10 +9,10 @@ build:
 
 run: 
 	cargo build --release
-	./target/release/qcal add 128 16 2
-	./target/release/qcal sub 128 16 2
-	./target/release/qcal mul 128 16 2
-	./target/release/qcal div 128 16 2
+	./target/release/qcal add 0xFF 30 o24 b111 
+	./target/release/qcal sub 0xFF 30 o24 b111 
+	./target/release/qcal mul 0xFF 30 o24 b111 
+	./target/release/qcal div 0xFF 30 o24 b111 
 
 help:
 	cargo build --release
