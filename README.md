@@ -1,6 +1,10 @@
 # quick-cal
 CLI for quick decimal, hexadecimal, binary, and octal basic calcs.
 
+```
+$ cargo install quick-calc
+```
+
 ## Examples
 ### Add
 ```
