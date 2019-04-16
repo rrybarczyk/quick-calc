@@ -1,21 +1,6 @@
 # quick-cal
 CLI for quick decimal, hexadecimal, binary, and octal basic calcs.
 
-```
-qcal-mul 0.2.0
-RJ Rybarczyk <rj@rybar.tech>
-
-USAGE:
-    qcal mul [numbers]...
-
-FLAGS:
-    -h, --help       Prints help information
-    -V, --version    Prints version information
-
-ARGS:
-    <numbers>... 
-```
-
 ## Examples
 ### Add
 ```
@@ -26,6 +11,11 @@ $ qcal add 30 2 5
 ```
 $ qcal add 21 14
 > dec: 35         hex: 23         oct: 43         bin: 100011
+```
+
+```
+$ qcal add 30 0xFF o24 b111
+> dec: 312        hex: 138        oct: 470        bin: 100111000
 ```
 
 ### Subtract

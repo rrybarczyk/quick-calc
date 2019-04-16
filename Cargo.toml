@@ -10,4 +10,3 @@ name = "qcal"
 path = "src/main.rs"
 
 [dependencies]
-structopt = "*"
