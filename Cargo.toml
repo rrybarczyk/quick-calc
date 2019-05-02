@@ -1,6 +1,6 @@
 [package]
 name        = "quick-calc"
-version     = "0.2.0"
+version     = "0.2.1"
 description = "A CLI tool for quick decimal, hexadecimal, binary, and octal calcs"
 authors     = ["RJ Rybarczyk <rj@rybar.tech>"]
 homepage    = "https://github.com/rrybarczyk/quick-calc"
