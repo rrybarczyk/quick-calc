@@ -1,7 +1,7 @@
 [package]
 name        = "quick-calc"
-version     = "0.2.1"
-description = "A CLI tool for quick decimal, hexadecimal, binary, and octal calcs"
+version     = "0.3.0"
+description = "A cli tool for quick decimal, hexadecimal, binary, and octal basic formatting and calculations"
 authors     = ["RJ Rybarczyk <rj@rybar.tech>"]
 homepage    = "https://github.com/rrybarczyk/quick-calc"
 license     = "CC0-1.0"
