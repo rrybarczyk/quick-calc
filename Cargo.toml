@@ -11,3 +11,6 @@ edition     = "2018"
 [[bin]]
 name = "qcal"
 path = "src/main.rs"
+
+[dependencies]
+configure_me = "0.3.3"
