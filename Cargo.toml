@@ -7,6 +7,11 @@ homepage    = "https://github.com/rrybarczyk/quick-calc"
 license     = "CC0-1.0"
 readme      = "README.md"
 edition     = "2018"
+build       = "build.rs"
+
+
+[package.metadata.configure_me]
+spec = "config_spec.toml"
 
 [[bin]]
 name = "qcal"
@@ -14,3 +19,6 @@ path = "src/main.rs"
 
 [dependencies]
 configure_me = "0.3.3"
+
+[build-dependencies]
+configure_me_codegen = "0.3.11"

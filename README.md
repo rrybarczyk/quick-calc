@@ -1,3 +1,4 @@
+`$ cargo run -- port 4848` -> still yields 4949
 # quick-calc
 A cli tool for quick decimal, hexadecimal, binary, and octal basic formatting and calculations.
 
