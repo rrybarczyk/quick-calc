@@ -1,9 +1,18 @@
 use crate::common::*;
 
 #[derive(StructOpt)]
-pub(crate) struct Opt {
-    #[structopt(name = "FORMAT", long = "format")]
-    _format: Operand,
+#[structopt(name = "qcal", about = "Semi-stacked based quick calculation tool")]
+pub(crate) enum Opt {
+    #[structopt(name = "format")]
+    Format { inputs: Operand },
+}
+
+impl Opt {
+    pub(crate) fn print_calc(&self) {
+        match &self {
+            Opt::Format { inputs } => println!("{}", inputs),
+        }
+    }
 }
 
 #[cfg(test)]
@@ -16,7 +25,7 @@ mod tests {
     fn cli_format() -> Result<(), structopt::clap::Error> {
         let dec_num = 4;
         let text = format!("{}", dec_num);
-        let _opt = Opt::from_iter_safe(vec!["qcal", "--format", &text])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", &text])?;
 
         Ok(())
     }

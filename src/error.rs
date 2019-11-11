@@ -12,7 +12,7 @@ impl Display for Error {
     fn fmt(&self, f: &mut Formatter) -> fmt::Result {
         match self {
             Self::NumParse { num_parse, bad_num } => {
-                write!(f, "Invalid operand input, {}: {}", num_parse, bad_num)
+                write!(f, "Invalid operand input: `{}`, {}", bad_num, num_parse)
             }
         }
     }

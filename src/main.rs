@@ -6,5 +6,6 @@ mod opt;
 use crate::common::*;
 
 fn main() {
-    let _opt = Opt::from_args();
+    let opt = Opt::from_args();
+    opt.print_calc();
 }
