@@ -1,5 +1,10 @@
-use quick_calc;
+mod common;
+mod error;
+mod operand;
+mod opt;
+
+use crate::common::*;
 
 fn main() {
-    quick_calc::run().unwrap();
+    let _opt = Opt::from_args();
 }

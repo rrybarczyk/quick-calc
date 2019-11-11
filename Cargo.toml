@@ -11,3 +11,6 @@ edition     = "2018"
 [[bin]]
 name = "qcal"
 path = "src/main.rs"
+
+[dependencies]
+structopt = "0.3.4"
