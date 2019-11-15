@@ -4,7 +4,10 @@ use crate::common::*;
 #[structopt(name = "qcal", about = "Semi-stacked based quick calculation tool")]
 pub(crate) enum Opt {
     #[structopt(name = "format")]
-    Format { inputs: Operand },
+    Format {
+        #[structopt(multiple = true)]
+        inputs: Operand,
+    },
 }
 
 impl Opt {
