@@ -1,5 +1,8 @@
-use quick_calc;
+// mod calc;
+mod common;
+mod error;
+mod opt;
 
 fn main() {
-    quick_calc::run().unwrap();
+    opt::run();
 }

@@ -1,11 +1,11 @@
-check: 
-    cargo watch --clear --exec check
-
 test: 
     cargo watch --clear --exec test
 
 tpr:
     watchexec -i target make testdbg
+
+check: 
+    cargo watch --clear --exec check
 
 test-print:
     cargo test -- --nocapture
@@ -30,6 +30,8 @@ run:
 	./target/release/qcal div 0xFF 30 o24 b111 
 	./target/release/qcal bytelen 0xFF 0xDEADBEEF
 	./target/release/qcal charlen 0xFF 0xDEADBEEF
+	./target/release/qcal format 3
+	./target/release/qcal format 3 6
 
 publish:
 	cargo build
