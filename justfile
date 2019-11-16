@@ -4,14 +4,22 @@ check:
 test: 
     cargo watch --clear --exec test
 
+tpr:
+    watchexec -i target make testdbg
+
 test-print:
     cargo test -- --nocapture
 
 build: 
 	cargo build --release
 
+r: 
+    watchexec -i target make rdbg
+
 run: 
 	cargo build --release
+	./target/release/qcal format 4
+	./target/release/qcal format 4 5
 	./target/release/qcal format 0xDEADBEEF 3 o24 b1101101 
 	./target/release/qcal endian 55bd840a78798ad0da853f68974f3d183e2bd1db6a842c1feecf222a00000000
 	./target/release/qcal endian 29263ed541e0072216baa08ead2d787754cb882f573543a10000486e00000000
