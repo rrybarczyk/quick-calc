@@ -14,7 +14,7 @@ build:
 	cargo build --release
 
 r: 
-    watchexec -i target make rdbg
+    watchexec --clear -i target make rdbg
 
 run: 
 	cargo build --release

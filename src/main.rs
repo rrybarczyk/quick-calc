@@ -1,8 +1,11 @@
-// mod calc;
 mod common;
 mod error;
+mod fmtoperands;
 mod opt;
 
+use crate::common::*;
+
 fn main() {
-    opt::run();
+    let opt = Opt::from_args();
+    opt.run_operations();
 }

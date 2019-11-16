@@ -13,4 +13,4 @@ name = "qcal"
 path = "src/main.rs"
 
 [dependencies]
-structopt = "0.2.18"
+structopt = "0.3.4"

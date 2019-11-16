@@ -1,71 +1,49 @@
 use crate::common::*;
 
 #[derive(StructOpt, Debug)]
-#[cfg_attr(test, structopt(raw(setting = "AppSettings::ColorNever")))]
 #[structopt(name = "qcal", about = "Semi-stacked based quick calculation tool")]
 pub(crate) enum Opt {
-
     #[structopt(name = "format")]
-    Format { 
-        #[structopt(
-            raw(takes_value = "true"),
-            raw(multiple = "true"),
-            parse(try_from_str="parse_format")
-            )]
-        inputs: Vec<usize>,
+    Format {
+        #[structopt(takes_value = true, multiple = true)]
+        operands: FmtOperands,
     },
-
-    #[structopt(name = "add")]
-    Add { 
-        #[structopt(
-            raw(takes_value = "true"),
-            raw(multiple = "true"),
-            parse(try_from_str="parse_format")
-            )]
-        inputs: Vec<usize>,
-    }
-}
-
-fn parse_format(s: &str) -> Result<usize, std::num::ParseIntError> {
-    s.to_string().parse::<usize>()
 }
 
 impl Opt {
-    fn print_calc(&self) {
+    /// Execute all operations and print formatted result
+    pub fn run_operations(&self) {
         match &self {
-            Opt::Format { inputs } => Opt::print_result(inputs),
-            Opt::Add { inputs } => println!("ADD"),
+            Opt::Format { operands } => {
+                &operands.print_result();
 
+                dbg!("ashldfjas: {:?}", &operands);
+                println!("ashldfjas: {:?}", &operands);
+            }
         }
     }
-
-    fn print_result(inputs: &Vec<usize>) {
-        inputs
-            .iter()
-            .map(|x| {
-                println!("dec: {}\t\thex: {:x}\t\toct: o{:o}\t\tbin: b{:b}", *x, *x, *x, *x);
-                *x
-            }).for_each(drop);
-    }
 }
-
-pub(crate) fn run() {
-    Opt::from_args().print_calc();
-}
-
 #[cfg(test)]
 mod tests {
     use super::*;
 
     #[test]
-    fn cli_format() -> Result<(), structopt::clap::Error> {
+    /// CLI accepts a single input
+    fn cli_format_single() -> Result<(), structopt::clap::Error> {
         let _opt = Opt::from_iter_safe(vec!["qcal", "format", "4"])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "x4"])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "o4"])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "b0100"])?;
         Ok(())
     }
 
     #[test]
+    /// CLI accepts multiple decimal inputs
     fn cli_format_multiple() -> Result<(), structopt::clap::Error> {
-        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "7", "5"])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "4 5"])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "x4 5"])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "o4 5"])?;
+        let _opt = Opt::from_iter_safe(vec!["qcal", "format", "b0100 b0101"])?;
         Ok(())
     }
 }
